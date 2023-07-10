@@ -1,7 +1,7 @@
 package com.linked.list;
 
-import com.linked.list.problems.ListNode;
-import com.linked.list.problems.MyLinkedList;
+import com.linked.list.problems.Node;
+import com.linked.list.problems.LL;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -12,19 +12,30 @@ public class LinkedListProblemsApplication {
 
 		SpringApplication.run(LinkedListProblemsApplication.class, args);
 
-		MyLinkedList myList = new MyLinkedList();
+		LL myList = new LL();
 
-		ListNode head = myList.createMyList();
+		Node head = myList.createMyList();
 
-		ListNode newHead = myList.insertFirst(head, 0);
+		head = myList.insertFirst(head, 0);
 
-		myList.display(newHead);
+		myList.display(head);
+		head = myList.insertLast(head, 6);
 
-		ListNode last = myList.insertLast(newHead, 6);
+		head = myList.insertInPosition(head, 2, 7);
+		myList.display(head);
 
-		myList.display(last);
+		head = myList.insertAtIndex(head, 2, 8);
+		myList.display(head);
 
+		head = myList.deleteFirst(head);
+		myList.display(head);
 
+		head = myList.deleteLast(head);
+
+		myList.display(head);
+
+		head = myList.deleteAtIndex(head, 3);
+		myList.display(head);
 	}
 
 }
